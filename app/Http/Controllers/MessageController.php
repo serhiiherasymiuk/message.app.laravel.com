@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Message;
 use Intervention\Image\Facades\Image;
+use Validator;
 
 class MessageController extends Controller
 {
