@@ -21,9 +21,12 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('/message', [MessageController::class, 'index']);
+Route::get('/message/getHead', [MessageController::class, 'getHead']);
+Route::get('/message/getByParent/{parent_id}', [MessageController::class, 'getByParentId']);
 Route::get("/message/{id}", [MessageController::class, "getById"]);
 Route::post('/message', [MessageController::class, 'store']);
 Route::post('/message/edit/{id}', [MessageController::class, 'update']);
+Route::delete("/message/{id}", [MessageController::class, "delete"]);
 
 Route::group([
     'middleware' => 'api',

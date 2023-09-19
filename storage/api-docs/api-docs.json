@@ -107,7 +107,7 @@
                 },
                 "responses": {
                     "200": {
-                        "description": "Add Category."
+                        "description": "Register"
                     }
                 }
             }
@@ -213,6 +213,89 @@
                 "responses": {
                     "200": {
                         "description": "Add Message."
+                    }
+                }
+            }
+        },
+        "/api/message/getHead": {
+            "get": {
+                "tags": [
+                    "Message"
+                ],
+                "operationId": "a25dac5035d093b278948bade3c3e763",
+                "parameters": [
+                    {
+                        "name": "sort_by",
+                        "in": "query",
+                        "description": "Column to sort by (user_name, user_email, created_at)",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "enum": [
+                                "user_name",
+                                "user_email",
+                                "created_at"
+                            ]
+                        }
+                    },
+                    {
+                        "name": "sort_order",
+                        "in": "query",
+                        "description": "Sorting order (asc or desc)",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "enum": [
+                                "asc",
+                                "desc"
+                            ]
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Messages"
+                    }
+                }
+            }
+        },
+        "/api/message/getByParent/{parent_id}": {
+            "get": {
+                "tags": [
+                    "Message"
+                ],
+                "operationId": "9c3a25d54092d0cb046479982d4b81ea",
+                "parameters": [
+                    {
+                        "name": "parent_id",
+                        "in": "path",
+                        "description": "Parent message id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Messages by Parent ID"
+                    },
+                    "404": {
+                        "description": "Parent message not found",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Parent message not found"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
                     }
                 }
             }
