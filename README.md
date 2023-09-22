@@ -1,3 +1,7 @@
+## About Project
+
+A test task written in Laravel that implements a service for creating messages and cascading responses to them. Implemented methods for working with messages, filtering messages, the possibility of authorization is implemented on jwt tokens, saving images that are attached to messages and users. The development of the project was carried out using the Apache HTTP server on XAMPP. The project is hosted on VDS
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
